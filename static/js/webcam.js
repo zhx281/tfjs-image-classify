@@ -13,8 +13,9 @@ async function setupWebcam() {
                     webcamElement.addEventListener('loadeddata', () => resolve(), false);
                 },
                 error => reject());
-        } else {
             $("#is_webcam").text('No webcam detected!');
+            console.log('no camera');
+        } else {
             reject();
         }
     });
@@ -22,7 +23,7 @@ async function setupWebcam() {
 
 (async function () {
     net = await mobilenet.load();
-
+    
     await setupWebcam();
     while (true) {
         const result = await net.classify(webcamElement);
