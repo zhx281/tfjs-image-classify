@@ -1,0 +1,44 @@
+{% extends "base.html" %}{% block content %}
+
+<h2 class="ml-3">Demo 1 Image Classification</h2>
+
+<div class='row'>
+    <div class='col-12'>
+        <div class="progress progress-bar progress-bar-striped progress-bar-animated mb-2">Loading Model</div>
+    </div>
+    <div class='col-12' align="center">
+        <h3 id="ready">
+            <span></span>
+        </h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <input id="image-selector" class="form-control border-0" type="file" accept=".png, .jpg, jpeg">
+    </div>
+    <div class="col-6">
+        <button id="predict-button" class="btn btn-dark float-right">Predict</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-12" align="center">
+        <img id="selected-image" class="ml-3" scr="" />
+    </div>
+</div>
+<hr>
+<div class='row'>
+    <div class="col">
+        <h3 id='result'>
+            <span></span>
+        </h3>
+        <ol id="prediction-list"></ol>
+    </div>
+</div>
+
+<script src="https://unpkg.com/@tensorflow/tfjs"></script>
+<script src="https://unpkg.com/@tensorflow-models/mobilenet"></script>
+<script src="{{ url_for('static', filename='js/predict_image.js') }}" type="text/javascript"></script>
+
+{% endblock %}
