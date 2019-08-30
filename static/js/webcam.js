@@ -21,7 +21,6 @@ async function setupWebcam() {
 
 (async function () {
     net = await mobilenet.load();
-    $(".progress-bar").hide();
 
     await setupWebcam();
     while (true) {
