@@ -19,8 +19,9 @@ async function setupWebcam() {
     });
 }
 
-async function app() {
+(async function () {
     net = await mobilenet.load();
+    $("#progress-bar").hide()
 
     await setupWebcam();
     while (true) {
@@ -33,4 +34,4 @@ async function app() {
 
         await tf.nextFrame();
     }
-}
+})();
