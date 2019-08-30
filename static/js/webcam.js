@@ -13,10 +13,11 @@ async function setupWebcam() {
                     webcamElement.addEventListener('loadeddata', () => resolve(), false);
                 },
                 error => reject());
-            $("#is_webcam").text('No webcam detected!');
-            console.log('no camera');
+            
         } else {
             reject();
+            $("#is_webcam").text('No webcam detected!');
+            console.log('no camera');
         }
     });
 }
