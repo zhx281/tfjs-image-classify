@@ -4,8 +4,8 @@ $("#predict-button").hide();
 let model;
 (async function(){
     model = await mobilenet.load();
-    $(".progress-bar").hide()
-    $("#ready").text('Model loaded')
+    $(".progress-bar").hide();
+    $("#ready").text('Model loaded');
 })();
 
 $("#image-selector").change(function() {
