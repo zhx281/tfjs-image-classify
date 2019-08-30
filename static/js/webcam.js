@@ -14,6 +14,7 @@ async function setupWebcam() {
                 },
                 error => reject());
         } else {
+            $("#webcam").text('No webcam detected!')
             reject();
         }
     });
